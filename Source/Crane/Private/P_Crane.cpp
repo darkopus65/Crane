@@ -8,11 +8,7 @@
 #include "DrawDebugHelpers.h"
 
 // Sets default values
-<<<<<<< HEAD
 AP_Crane::AP_Crane() : SpeedOfTurnUpAndDown(30), SpeedOfTurnAtRate(7), ZLimited(0)
-=======
-AP_Crane::AP_Crane() : ZLimited(0), SpeedOfTurnUpAndDown(30), SpeedOfTurnAtRate(30)
->>>>>>> 118af87... add lines and fix block
 {
  	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
@@ -116,13 +112,9 @@ void AP_Crane::Release()
 void AP_Crane::BeginPlay()
 {
 	Super::BeginPlay();
-<<<<<<< HEAD
 	// «адаем массу (в конструкторе GEngine еще не иниализирован)
 	MeshForPlatformComp->SetMassOverrideInKg(NAME_None, 2000);
 	MeshForHookComp->SetMassOverrideInKg(NAME_None, 100);
-
-=======
->>>>>>> 118af87... add lines and fix block
 	ZLimited = MinLimit;
 	PhysicsComp->SetLinearZLimit(LCM_Limited, ZLimited);
 }
